@@ -3,14 +3,39 @@
 
 using Introduction.Topics;
 
-//// Basic Thread Syntax
-//BasicThreadSyntax.Run();
+bool running = true;
 
-//// Divide and Conquer Comparison Performace 1 Thread vs 4 Thread
-//DivideConquer.Run();
+do {
+    Console.WriteLine("Select an option:");
+    Console.WriteLine("A: Basic Thread Syntax");
+    Console.WriteLine("B: Divide and Conquer Comparison Performance 1 Thread vs 4 Thread");
+    Console.WriteLine("C: Web Server Single Thread");
+    Console.WriteLine("D: Web Server Multi Thread");
+    Console.WriteLine("E: Exit");
 
-//// Web Server Single Thread
-//WebServerSingleThread.Run();
+    Console.Write("Choice: ");
+    string choice = Console.ReadLine().ToUpper();
 
-// Web Server Multi Thread
-WebServerMultiThread.Run();
+    switch (choice)
+    {
+        case "A":
+            BasicThreadSyntax.Run();
+            break;
+        case "B":
+            DivideConquer.Run();
+            break;
+        case "C":
+            WebServerSingleThread.Run();
+            break;
+        case "D":
+            WebServerMultiThread.Run();
+            break;
+        case "E":
+            running = false;
+            break;
+        default:
+            Console.WriteLine("Invalid option selected.");
+            break;
+    }
+}
+while (running);
