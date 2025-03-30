@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 //// Mutx Syntax --> Allow 1 thread to access the Crtical Section
 ///  Across diffrent processes such as file access
+///  If does not use difference process, use other techniques such as lock monitor
 //using (var mutex = new Mutex())
 //{ 
 //    mutex.WaitOne();
