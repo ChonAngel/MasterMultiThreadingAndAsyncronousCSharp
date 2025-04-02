@@ -3,6 +3,23 @@
 //or other supporting functions that are not part of the core processing in the program.
 
 
-using MultithreadingMISC;
+for(int i = 0; i < 10; i++)
+{
+    Thread thread = new Thread(Work);
+    //threads[i].Name = $"Thread {i}";
+    //Console.WriteLine($"{threads[i].Name}'s state is {threads[i].ThreadState}");
+    thread.Start();
+}
 
-StateofThread.Run();
+Work();
+
+void Work()
+{
+    Console.WriteLine($"Thread {Thread.CurrentThread.Name} started working. The state is {Thread.CurrentThread.ThreadState}");
+    Thread.Sleep(10000);
+    Console.WriteLine($"Thread {Thread.CurrentThread.Name} finished working. The state is {Thread.CurrentThread.ThreadState}");
+}
+
+//using MultithreadingMISC;
+
+//StateofThread.Run();
