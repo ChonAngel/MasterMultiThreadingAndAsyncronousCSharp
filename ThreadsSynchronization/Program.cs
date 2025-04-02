@@ -25,5 +25,5 @@
 //// TwoWaySignaling Producer-Consumer
 //TwoWaySignalingSample.Run();
 
-//// Nested locks and deadlocks
+// Nested locks and deadlocks
 //DeadLockSample.Run();
