@@ -32,6 +32,14 @@ namespace IntroductionThreadOffload
         private void ShowMessage(string message, int delay)
         {
             Thread.Sleep(delay);
+
+            //// lblMessage maintain by UI thread(Own Thread)
+            //lblMessage.Text = message;
+
+            //// Call the delegate within the thread that the label was created in
+            //lblMessage.Invoke(() => lblMessage.Text = message);
+
+            // If the current thread is not the UI thread, then we need to invoke the delegate otherwise we can directly update the label
             if (lblMessage.InvokeRequired)
             {
                 lblMessage.Invoke(new Action(() => lblMessage.Text = message));
