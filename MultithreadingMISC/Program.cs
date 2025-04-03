@@ -4,6 +4,8 @@
 
 using MultithreadingMISC;
 
+
+
 //// Debug Multithread sample
 //DebugMulithreadSample.Run();
 
@@ -14,5 +16,19 @@ using MultithreadingMISC;
 //// Make thread wait for sometime
 //ThreadWait.Run();
 
-// Thread Result Return
-ThreadResult.Run();
+//// Thread Result Return
+//ThreadResult.Run();
+
+//// Thread Cancelling
+//ThreadCancelling.Run();
+
+
+////Thread Pool Example
+//ThreadPool.GetMaxThreads(out var maxWorkerThreads, out var maxIOThread);
+//Console.WriteLine($"Max worker Thread: {maxWorkerThreads} , Max I/O Threads: {maxIOThread}");
+//ThreadPool.GetAvailableThreads(out var availableWorkerThreads, out var availableIOThread);
+//Console.WriteLine($"Active worker Thread: {maxWorkerThreads - availableWorkerThreads} , Active I/O Threads: {maxIOThread - availableIOThread}");
+//ThreadPoolSample.Run();
+
+// Thread Exeption Handling Sample
+ThreadExeptionHandlingSample.Run();
