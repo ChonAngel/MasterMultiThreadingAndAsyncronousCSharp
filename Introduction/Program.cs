@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
-using Introduction.Topics;
+using Introduction;
 
 bool running = true;
 

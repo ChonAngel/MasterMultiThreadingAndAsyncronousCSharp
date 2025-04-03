@@ -4,9 +4,12 @@
 
 using MultithreadingMISC;
 
-// Debug Multithread sample
-DebugMulithreadSample.Run();
+//// Debug Multithread sample
+//DebugMulithreadSample.Run();
 
 
 //// State of thread
 //StateofThread.Run();
+
+//// Make thread wait for sometime
+ThreadWait.Run();
