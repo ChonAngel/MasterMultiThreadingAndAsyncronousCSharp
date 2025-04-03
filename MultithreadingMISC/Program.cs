@@ -12,4 +12,7 @@ using MultithreadingMISC;
 //StateofThread.Run();
 
 //// Make thread wait for sometime
-ThreadWait.Run();
+//ThreadWait.Run();
+
+// Thread Result Return
+ThreadResult.Run();
