@@ -31,12 +31,25 @@ namespace TaskBasedAsynchronous
             tasks[3] = Task.Run(() => { return SumSegment(segmentLength * 3, arr.Length); });
 
             //Console.WriteLine($"Sum is: {tasks[0].Result + tasks[1].Result + tasks[2].Result + tasks[3].Result}");
-            Console.WriteLine($"Sum is: {tasks.Sum(t => t.Result)}");
+            //Console.WriteLine($"Sum is: {tasks.Sum(t => t.Result)}");
+
+            //Use WhenAll for wait all task done and do not block the Main Thread
+            Task.WhenAll(tasks).ContinueWith(t =>
+            {
+                Console.WriteLine($"Sum is: {t.Result.Sum()}");
+            });
+
+            // WhenAny
+
+            Console.WriteLine("The end of program");
+
 
             var EndTime = DateTime.Now;
             var timespan = EndTime - StartTime;
 
             Console.WriteLine($"Time it Take: {timespan.Milliseconds}");
+
+            Console.ReadLine();
 
         }
 
