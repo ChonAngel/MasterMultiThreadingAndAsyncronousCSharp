@@ -13,7 +13,12 @@ using TaskBasedAsynchronous;
 // Thread is basic programming unit to run something in CPU
 
 // Task Result
-TaskReturnResult.Run();
+//TaskReturnResult.Run();
 
 // Task Continuation - Wait, WaitAll and Result
 //TaskContinuation.Run();
+
+// Task Chain and UnWrap
+//TaskChainandUnWrap.Run();
+
+TaskExceptionHandler.Run();
