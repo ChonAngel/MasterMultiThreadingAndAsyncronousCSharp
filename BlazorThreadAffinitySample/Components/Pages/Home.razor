@@ -24,16 +24,28 @@ class="btn btn-primary"
 @code {
     string currentTime = string.Empty;
 
-    void DisplayTime()
+    // void DisplayTime()
+    // {
+    //     Thread thread = new Thread((UpdateCurrentTime) =>
+    //     {           
+    //         Thread.Sleep(500);
+    //         currentTime = DateTime.Now.ToString();
+    //         // Take care access the resource that created with in the thread in itsekf
+    //         base.InvokeAsync(StateHasChanged);
+    //     });
+    //     thread.Start();
+    // }
+
+    async Task OnDisplayTimeClicked()
     {
-        Thread thread = new Thread((UpdateCurrentTime) =>
-        {           
-            Thread.Sleep(500);
-            currentTime = DateTime.Now.ToString();
-            // Take care access the resource that created with in the thread in itsekf
-            base.InvokeAsync(StateHasChanged);
-        });
-        thread.Start();
+        await DisplayTime();
+    }
+
+    async Task DisplayTime()
+    {
+        await Task.Delay(500);
+        currentTime = DateTime.Now.ToString();
+        StateHasChanged();
     }
 }
 

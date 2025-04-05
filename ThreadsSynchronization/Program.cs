@@ -26,4 +26,4 @@
 //TwoWaySignalingSample.Run();
 
 // Nested locks and deadlocks
-//DeadLockSample.Run();
+DeadLockSample.Run();
