@@ -21,4 +21,8 @@ using TaskBasedAsynchronous;
 // Task Chain and UnWrap
 //TaskChainandUnWrap.Run();
 
-TaskExceptionHandler.Run();
+//TaskExceptionHandler.Run();
+
+//TaskSynchronization.Run();
+
+TaskCancelling.Run();
