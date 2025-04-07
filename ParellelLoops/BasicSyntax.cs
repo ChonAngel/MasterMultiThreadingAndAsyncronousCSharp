@@ -10,32 +10,35 @@ namespace ParellelLoops
     {
         public static void Run()
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] array = Enumerable.Range(1, 100).ToArray();
 
             int sum = 0;
             object lockObject = new object();
 
-            //Parallel.For(0, array.Length, i =>
-            //{
-            //    // This is a thread-safe operation
-            //    // The lock statement is used to ensure that only one thread can access the shared resource at a time
-            //    lock (lockObject)
-            //    {
-            //        sum += array[i];
-            //    }
-
-            //});
-
-            Parallel.ForEach(array, i =>
+            Parallel.For(0, array.Length, i =>
             {
                 // This is a thread-safe operation
                 // The lock statement is used to ensure that only one thread can access the shared resource at a time
                 lock (lockObject)
                 {
-                    sum += i;
+                    sum += array[i];
+                    Console.WriteLine($"Current Task id: {Task.CurrentId}, Is thread pool thread {Thread.CurrentThread.IsThreadPoolThread}");
                 }
+
             });
 
+            //Parallel.ForEach(array, i =>
+            //{
+            //    // This is a thread-safe operation
+            //    // The lock statement is used to ensure that only one thread can access the shared resource at a time
+            //    lock (lockObject)
+            //    {
+            //        sum += i;
+            //    }
+            //});
+
+            // After the parellel loop line will execute after all the thread is completed
             Console.WriteLine($"The Sum is {sum}");
             Console.ReadLine();
 
