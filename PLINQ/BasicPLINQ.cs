@@ -12,7 +12,7 @@ namespace PLINQ
         {
            var items = Enumerable.Range(1, 200);
 
-            // Producure --> Buffer <-- Consumer
+            // Producure --> Buffer --> Consumer
             // Producer does not produce the data until the consumer requests it
 
             //// Sequential LINQ
